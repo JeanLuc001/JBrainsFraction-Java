@@ -15,11 +15,7 @@ public class Fraction
 	 */
 	public Fraction plus(Fraction fraction)
 	{
-		if (fraction.intValue != 0)
-		{
-			return new Fraction(intValue + fraction.intValue);
-		}
-		return this;
+		return new Fraction(intValue + fraction.intValue);
 	}
 
 	public int intValue()
