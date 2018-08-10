@@ -9,6 +9,12 @@ public class Fraction
 		this.intValue = intValue;
 	}
 
+	/**
+	 * Tutor wuerde es in realen Projekten
+	 * nicht so implementieren! 
+	 * Dieser "micro step" ist nur sinnvoll,
+	 * wenn der naechste Schritt noch unklar ist!
+	 */
 	public Fraction plus(Fraction fraction)
 	{
 		if (fraction.intValue != 0)
