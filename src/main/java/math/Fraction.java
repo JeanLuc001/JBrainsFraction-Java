@@ -2,8 +2,11 @@ package math;
 
 public class Fraction
 {
+	private final int intValue;
+
 	public Fraction(int intValue)
 	{
+		this.intValue = intValue;
 	}
 
 	public Fraction plus(Fraction fraction)
@@ -13,6 +16,6 @@ public class Fraction
 
 	public int intValue()
 	{
-		return 0;
+		return intValue;
 	}
 }
