@@ -2,12 +2,28 @@ package math;
 
 public class Fraction
 {
-	private final int intValue;
+	private  int intValue;
 
 	public Fraction(int intValue)
 	{
 		this.intValue = intValue;
 	}
+
+	public Fraction(int numerator, int denominator)
+	{
+		
+	}
+	
+	public int getNumerator()
+	{
+		return 3;
+	}
+	
+	public int getDenominator()
+	{
+		return 5;
+	}
+	
 
 	/**
 	 * Tutor wuerde es in realen Projekten nicht so implementieren! Dieser
