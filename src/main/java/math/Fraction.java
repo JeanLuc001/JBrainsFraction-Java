@@ -2,36 +2,34 @@ package math;
 
 public class Fraction
 {
-	private  int intValue;
+	private final int intValue;
+	private final int denominator;
 
 	public Fraction(int intValue)
 	{
 		this.intValue = intValue;
+		this.denominator = 1;
 	}
 
 	public Fraction(int numerator, int denominator)
 	{
-		
+		this.intValue = numerator;
+		this.denominator = denominator;
 	}
-	
+
 	public int getNumerator()
 	{
 		return 3;
 	}
-	
+
 	public int getDenominator()
 	{
-		return 5;
+		return denominator;
 	}
-	
 
-	/**
-	 * Tutor wuerde es in realen Projekten nicht so implementieren! Dieser
-	 * "micro step" ist nur sinnvoll, wenn der naechste Schritt noch unklar ist!
-	 */
 	public Fraction plus(Fraction fraction)
 	{
-		return new Fraction(intValue + fraction.intValue);
+		return new Fraction(intValue + fraction.intValue, denominator);
 	}
 
 	public int intValue()
