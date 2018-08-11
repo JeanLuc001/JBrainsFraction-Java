@@ -1,8 +1,7 @@
 package math;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ReduceFractionTest
@@ -18,7 +17,6 @@ public class ReduceFractionTest
 	}
 	
 	@Test
-	@Ignore("waiting to implement gcd()")
 	public void reduceToNotWholeNumber() throws Exception
 	{
 		assertEquals(new Fraction(3, 4), new Fraction(6, 8));

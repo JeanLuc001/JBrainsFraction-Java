@@ -9,7 +9,7 @@ import org.junit.Test;
  * Jede Methode stellt einen Spezialfall des zu testenden Verhaltens ("adding
  * fractions") von der Testliste dar ([V1,2:00]). In diesem Fall, wo es EIN
  * Verhalten gibt, das mittels diverser SPEZIALFAELLE (eine Methode pro Fall)
- * getestet wird, wird die Testklasse nicht nach der zu testenden Klasse benannt
+ * ausgedrueckt wird, wird die Testklasse nicht nach der zu testenden Klasse benannt
  * (z.B. FractionTest), sondern nach dem zu implementierenden Verhalten, um
  * nicht durch die Testklasse implizit bereits die Struktur der Loesung
  * vorzugeben ([V1,1:00]).<br>
