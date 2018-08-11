@@ -16,24 +16,19 @@ public class Fraction
 		this.denominator = denominator;
 	}
 
-	public int getNumerator()
-	{
-		return numerator;
-	}
-
-	public int getDenominator()
-	{
-		return denominator;
-	}
-
+	/**
+	 * "micro step":<br>
+	 * if-Anweisung, um den neuen Test 'differentDenominators()' (temporaer) von
+	 * den alten, funktionierenden Tests, zu separieren.
+	 */
 	public Fraction plus(Fraction fraction)
 	{
+		if (denominator != fraction.denominator)
+		{
+			return new Fraction(numerator * fraction.denominator + fraction.numerator * denominator,
+					denominator * fraction.denominator);
+		}
 		return new Fraction(numerator + fraction.numerator, denominator);
-	}
-
-	public int intValue()
-	{
-		return numerator;
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package math;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -45,7 +45,7 @@ public class AddFractionsTest
 
 	private void checkAddFractionsAsIntegers(int addend, int augend, int expectedResult)
 	{
-		assertEquals(expectedResult, new Fraction(addend).plus(new Fraction(augend)).intValue());
+		assertEquals(new Fraction(expectedResult), new Fraction(addend).plus(new Fraction(augend)));
 	}
 
 	/**
@@ -87,5 +87,11 @@ public class AddFractionsTest
 	public void nonTrivialButCommonDenominator() throws Exception
 	{
 		assertEquals(new Fraction(3, 5), new Fraction(1, 5).plus(new Fraction(2, 5)));
+	}
+
+	@Test
+	public void differentDenominatorsWithoutReducing() throws Exception
+	{
+		assertEquals(new Fraction(5, 6), new Fraction(1, 2).plus(new Fraction(1, 3)));
 	}
 }
