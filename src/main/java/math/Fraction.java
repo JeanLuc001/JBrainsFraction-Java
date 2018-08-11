@@ -2,20 +2,17 @@ package math;
 
 public class Fraction
 {
-	private final int intValue;
 	private final int numerator;
 	private final int denominator;
 
 	public Fraction(int intValue)
 	{
-		this.intValue = intValue;
 		this.numerator = intValue;
 		this.denominator = 1;
 	}
 
 	public Fraction(int numerator, int denominator)
 	{
-		this.intValue = numerator;
 		this.numerator = numerator;
 		this.denominator = denominator;
 	}
