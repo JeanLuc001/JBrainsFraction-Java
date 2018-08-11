@@ -1,6 +1,6 @@
 package math;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -88,5 +88,11 @@ public class AddFractionsTest
 		Fraction sum = new Fraction(1, 5).plus(new Fraction(2, 5));
 		assertEquals(3, sum.getNumerator());
 		assertEquals(5, sum.getDenominator());
+	}
+	
+	@Test
+	public void testName() throws Exception
+	{
+		
 	}
 }
