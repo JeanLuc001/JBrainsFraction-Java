@@ -2,6 +2,7 @@ package math;
 
 import static org.junit.Assert.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -9,9 +10,9 @@ import org.junit.Test;
  * Jede Methode stellt einen Spezialfall des zu testenden Verhaltens ("adding
  * fractions") von der Testliste dar ([V1,2:00]). In diesem Fall, wo es EIN
  * Verhalten gibt, das mittels diverser SPEZIALFAELLE (eine Methode pro Fall)
- * ausgedrueckt wird, wird die Testklasse nicht nach der zu testenden Klasse benannt
- * (z.B. FractionTest), sondern nach dem zu implementierenden Verhalten, um
- * nicht durch die Testklasse implizit bereits die Struktur der Loesung
+ * ausgedrueckt wird, wird die Testklasse nicht nach der zu testenden Klasse
+ * benannt (z.B. FractionTest), sondern nach dem zu implementierenden Verhalten,
+ * um nicht durch die Testklasse implizit bereits die Struktur der Loesung
  * vorzugeben ([V1,1:00]).<br>
  * Jede Methode wird nach dem zu testenden Spezialfall benannt; aber immer noch
  * relativ allgemein: Z.B. wird nicht add3To5() getesetet, sondern besser
@@ -93,5 +94,43 @@ public class AddFractionsTest
 	public void differentDenominatorsWithoutReducing() throws Exception
 	{
 		assertEquals(new Fraction(5, 6), new Fraction(1, 2).plus(new Fraction(1, 3)));
+	}
+
+	@Test
+	public void reduceResultToWholeNumber() throws Exception
+	{
+		assertEquals(new Fraction(1), new Fraction(1, 3).plus(new Fraction(2, 3)));
+	}
+
+	@Test
+	public void oneDenominatorIsAMultipleOfTheOther() throws Exception
+	{
+		assertEquals(new Fraction(11, 8), new Fraction(3, 4).plus(new Fraction(5, 8)));
+	}
+
+	@Test
+	public void commonFactorInDenominators() throws Exception
+	{
+		assertEquals(new Fraction(11, 18), new Fraction(1, 6).plus(new Fraction(4, 9)));
+	}
+
+	@Test
+	public void redcueResultEvenWhenDenominatorsAreTheSame() throws Exception
+	{
+		assertEquals(new Fraction(3, 2), new Fraction(3, 4).plus(new Fraction(3, 4)));
+	}
+
+	@Test
+	public void negativeFractionAndReducing() throws Exception
+	{
+		assertEquals(new Fraction(1, 2), new Fraction(-1, 4).plus(new Fraction(3, 4)));
+		assertEquals(new Fraction(-1, 8), new Fraction(3, 8).plus(new Fraction(-1, 2)));
+	}
+
+	@Test
+	@Ignore("constructor doesn't avoid yet neg. denominators")
+	public void negativeSignsEverywhere() throws Exception
+	{
+		assertEquals(new Fraction(1, 2), new Fraction(1, -4).plus(new Fraction(-3, -4)));
 	}
 }
