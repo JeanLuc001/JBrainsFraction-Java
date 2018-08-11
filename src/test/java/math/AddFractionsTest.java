@@ -1,6 +1,6 @@
 package math;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -40,8 +40,12 @@ public class AddFractionsTest
 	@Test
 	public void zerosPlusZeros() throws Exception
 	{
-		Fraction sum = new Fraction(0).plus(new Fraction(0));
-		assertEquals(0, sum.intValue());
+		checkAddFractionsAsIntegers(0, 0, 0);
+	}
+
+	private void checkAddFractionsAsIntegers(int addend, int augend, int expectedResult)
+	{
+		assertEquals(expectedResult, new Fraction(addend).plus(new Fraction(augend)).intValue());
 	}
 
 	/**
@@ -53,15 +57,13 @@ public class AddFractionsTest
 	@Test
 	public void nonZeroPlusZero() throws Exception
 	{
-		Fraction sum = new Fraction(3).plus(new Fraction(0));
-		assertEquals(3, sum.intValue());
+		checkAddFractionsAsIntegers(3, 0, 3);
 	}
 
 	@Test
 	public void zeroPlusNonZero() throws Exception
 	{
-		Fraction sum = new Fraction(0).plus(new Fraction(5));
-		assertEquals(5, sum.intValue());
+		checkAddFractionsAsIntegers(5, 0, 5);
 	}
 
 	/**
@@ -72,20 +74,18 @@ public class AddFractionsTest
 	@Test
 	public void nonNegativeNonZeroOperands() throws Exception
 	{
-		assertEquals(7, new Fraction(3).plus(new Fraction(4)).intValue());
+		checkAddFractionsAsIntegers(3, 4, 7);
 	}
 
 	@Test
 	public void negativeInputsAndNegativeOutput() throws Exception
 	{
-		Fraction sum = new Fraction(-3).plus(new Fraction(1));
-		assertEquals(-2, sum.intValue());
+		checkAddFractionsAsIntegers(-3, 1, -2);
 	}
 
 	@Test
 	public void nonTrivialButCommonDenominator() throws Exception
 	{
-		Fraction sum = new Fraction(1, 5).plus(new Fraction(2, 5));
-		assertEquals(new Fraction(3, 5), sum);
+		assertEquals(new Fraction(3, 5), new Fraction(1, 5).plus(new Fraction(2, 5)));
 	}
 }
