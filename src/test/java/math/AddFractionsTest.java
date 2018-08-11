@@ -96,6 +96,10 @@ public class AddFractionsTest
 		assertEquals(new Fraction(5, 6), new Fraction(1, 2).plus(new Fraction(1, 3)));
 	}
 
+	// Im Folgenden Beispiel fuer das Kuerzen (kein "echtes" TDD, sondern Unit
+	// Testing, da
+	// Kuerzen schon in ReduceFractionTest.java getestet und
+	// alle folgenden Tests bei Implementierung NICHT fehlschlugen).
 	@Test
 	public void reduceResultToWholeNumber() throws Exception
 	{
@@ -128,7 +132,6 @@ public class AddFractionsTest
 	}
 
 	@Test
-	@Ignore("constructor doesn't avoid yet neg. denominators")
 	public void negativeSignsEverywhere() throws Exception
 	{
 		assertEquals(new Fraction(1, 2), new Fraction(1, -4).plus(new Fraction(-3, -4)));
